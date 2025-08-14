@@ -52,3 +52,20 @@
     }
   }
 }
+.social_link {
+  transition: color ease .3s;
+  color: #FFFFFF;
+  &:hover {
+    color: #DAD9FB;
+  }
+  &:active {
+    color: #7875FE;
+  }
+  &:focus {
+    color: #fff ;
+    path {
+      stroke: #7875FE;      /* цвет обводки */
+      stroke-width: 1.5;
+    }
+  }
+}

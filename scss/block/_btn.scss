@@ -1,0 +1,24 @@
+.btn {
+  display: inline-block;
+  max-width: fit-content;
+  border: 1px solid #7875fe;
+  padding: 20px 50px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #7875fe;
+  transition: color ease 0.3s, background-color ease .5s;
+  &:hover {
+    color: #ffffff;
+    background-color: #7875FE;
+  }
+
+  &:focus {
+    background: #DAD9FB;
+    color: #7875FE;
+  }
+
+  &:active {
+    color: #FFFFFF;
+    background: #4946B4;
+  }
+}

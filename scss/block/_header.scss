@@ -14,7 +14,8 @@
 
         > .header_actions__close {
           opacity: 1;
-          transition: opacity ease .5s;
+//          transition: opacity ease .5s;
+          transition: opacity 0.5s ease, color .3s ease, background-color .5s ease;
           margin-right: 0;
         }
       }
@@ -102,6 +103,16 @@
       font-size: 20px;
       color: #4c5866;
       text-wrap: nowrap;
+      transition: color ease 0.3s, background-color ease 0.3s;
+      &:hover {
+        color: #7875FE;
+      }
+      &:focus {
+        background-color: #4C5866;
+      }
+      &:active {
+        color: #4946B4;
+      }
     }
   }
 
@@ -109,7 +120,20 @@
   &_actions {
     display: flex;
     column-gap: 30px;
+
     &__icon {
+      color: #4C5866;
+      transition: color ease .3s, background-color ease .3s;
+      &:hover {
+        color: #7875FE;
+      }
+      &:focus {
+        color: #7875FE;
+        background-color: #DAD9FB;
+      }
+      &:active {
+        color: #4946B4;
+      }
       svg {
         display: block;
       }
@@ -120,10 +144,25 @@
       align-items: center;
       column-gap: 7px;
 
-      svg {
-        cursor: pointer;
+    }
+
+    &__btn {
+      cursor: pointer;
+      transition: color .3s ease, background .3s ease;
+      &:hover {
+        color: #7875FE;
       }
 
+      &:focus {
+        background: #DAD9FB;
+      }
+      &:active {
+        color: #4946B4;
+      }
+
+      &.active {
+        color: #4946B4;
+      }
     }
 
 
@@ -144,7 +183,7 @@
     }
 
     &__close {
-      transition: opacity ease .5s;
+      transition:opacity 0.5s ease;
       position: absolute;
       right: 0;
       top: 50%;
@@ -152,14 +191,23 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: #d1d1e5;
+      background-color: #d1d1e5;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       opacity: 0;
-
-      svg {
+      color: #4C5866;
+      &:hover {
+        color: #fff;
+        background-color: #7875FE;
+      }
+      &:focus {
+      border: 1px solid #7875FE;
+      }
+      &:active {
+        color: #ffffff;
+        background-color: #4946B4;
       }
     }
   }
