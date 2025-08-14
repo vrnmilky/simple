@@ -1,0 +1,105 @@
+@use '../base/mixins' as * ;
+
+.hero {
+  border-top: 1px solid #ddd;
+  &_container {
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+
+  &_wrapper {
+    width: 445px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    flex-shrink: 0;
+    &__title {
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 100%;
+      color: #4c5866;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #85859b;
+    }
+
+    &__button {
+      max-width: fit-content;
+      border: 1px solid #7875fe;
+      padding: 20px 50px;
+      font-weight: 400;
+      font-size: 20px;
+      color: #7875fe;
+    }
+  }
+  &_img {
+    max-width: 540px;
+    max-height: 560px;
+    overflow: hidden;
+  }
+}
+
+@include breakpoint-laptop {
+  .hero {
+    &_wrapper {
+      max-width: 390px;
+      &__title {
+        font-size: 50px;
+      }
+
+      &__text {
+        font-size: 18px;
+      }
+
+      &__button {
+
+      }
+    }
+
+  }
+}
+@include breakpoint-tablet {
+  .hero {
+    &_container {
+      padding-top: 20px;
+    }
+    &_wrapper {
+
+      max-width: 287px;
+      row-gap: 20px;
+      &__title {
+        font-size: 38px;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+
+      &__button {
+
+      }
+    }
+  }
+}
+@include breakpoint-mobile {
+  .hero {
+    &_container {
+      padding-block: 49px;
+    }
+    &_wrapper {
+      width: 100%;
+    }
+
+    &_img {
+      display: none;
+    }
+
+  }
+}

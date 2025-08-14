@@ -1,0 +1,179 @@
+@use '../base/mixins' as * ;
+
+.product {
+  padding-block: 90px;
+
+  &_container {
+
+  }
+
+  &_list {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+  }
+
+
+  &_card {
+    width: 255px;
+    height: 465px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__img {
+      width: 255px;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      background: #ebebeb;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      font-weight: 400;
+      font-size: 30px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    &__count {
+      font-weight: 400;
+      font-size: 14px;
+      color: #b5b5bd;
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 170%;
+      color: #85859b;
+    }
+
+    &__link {
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      font-weight: 400;
+      font-size: 20px;
+      color: #7875fe;
+
+      &:hover {
+        color: #4946b4;
+      }
+    }
+  }
+}
+
+@include breakpoint-desktop-lg {
+  .product {
+    padding-block: 60px;
+
+    &_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      row-gap: 60px;
+      justify-content: center;
+    }
+
+    &_card {
+      width: 330px;
+      height: 434px;
+
+      &__img {
+        width: 330px;
+        height: 434px;
+      }
+    }
+  }
+}
+
+
+@include breakpoint-laptop {
+  .product {
+    &_container {
+
+    }
+
+    &_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &_item {
+
+    }
+
+    &_card {
+      &__img {
+
+      }
+
+      &__title {
+
+      }
+
+      &__count {
+
+      }
+
+      &__text {
+
+      }
+
+      &__link {
+
+
+        &:hover {
+
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-tablet {
+  .product {
+
+    &_list {
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+      row-gap: 60px;
+      justify-content: center;
+    }
+
+    &_card {
+
+      &__title {
+        font-size: 30px;
+      }
+
+      &__count {
+        font-size: 14px;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+
+    }
+  }
+}
+
+@include breakpoint-mobile {
+  .product {
+
+    &_card {
+
+      &__title {
+        font-size: 24px;
+      }
+
+    }
+  }
+}

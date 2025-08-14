@@ -1,0 +1,104 @@
+@use '../base/mixins' as *;
+
+.sketch {
+  &_container {
+    padding-top: 90px;
+    display: flex;
+    column-gap: 30px;
+    justify-content: space-between;
+  }
+
+  &_inner {
+    max-width: 350px;
+    padding-top: 24px;
+
+    &__title {
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 100%;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 170%;
+      color: #85859b;
+      margin-bottom: 26px;
+    }
+
+    &__button {
+      display: inline-block;
+      max-width: fit-content;
+      border: 1px solid #7875fe;
+      padding: 20px 50px;
+      font-weight: 400;
+      font-size: 20px;
+      color: #7875fe;
+    }
+  }
+
+  &_img {
+    width: 730px;
+    height: 410px;
+    background-image: url("../assets/images/sketchbook.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+}
+
+@include breakpoint-desktop-lg {
+  .sketch {
+    &_container {
+    }
+
+    &_img {
+      width: 500px;
+      height: 320px;
+    }
+  }
+}
+
+@include breakpoint-laptop {
+  .sketch {
+    &_container {
+      height: fit-content;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding-block: 60px;
+    }
+
+    &_img {
+      width: 449px;
+      height: 342px;
+    }
+    &_inner {
+      &__text {
+        margin-bottom: 26px;
+      }
+    }
+  }
+}
+
+@include breakpoint-mobile {
+  .sketch {
+    &_img {
+      max-width: 100%;
+      height: 200px;
+      background-size: contain;
+    }
+
+    &_inner {
+
+      &__title {
+        font-size: 24px;
+
+      }
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+}

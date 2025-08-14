@@ -1,0 +1,34 @@
+// Медиазапрос для экранов до 1260px — например, большие десктопы и маленькие мониторы
+@mixin breakpoint-desktop-lg {
+  @media screen and (max-width: 1260px) {
+    @content;
+  }
+}
+
+// Медиазапрос для экранов до 992px — стандартный ноутбук / маленький десктоп
+@mixin breakpoint-laptop {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+// Медиазапрос для экранов до 768px — планшеты в портретной ориентации
+@mixin breakpoint-tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Медиазапрос для экранов до 540px — мобильные телефоны
+@mixin breakpoint-mobile {
+  @media screen and (max-width: 540px) {
+    @content;
+  }
+}
+
+// Медиазапрос для ретина и устройств с высокой плотностью пикселей
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}

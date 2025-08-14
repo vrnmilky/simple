@@ -1,0 +1,191 @@
+@use "../base/mixins" as *;
+
+.content {
+  padding-block: 90px;
+  background: #ebebeb;
+
+  &_container {
+  }
+
+  &_list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    margin-bottom: 90px;
+  }
+
+  &_item {
+    position: relative;
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    padding-top: 19px;
+    border-top: 1px solid #c0c0c0;
+
+    &__title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: #666;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #85859b;
+    }
+  }
+
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__img {
+    }
+
+    &__title {
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 100%;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 170%;
+      color: #85859b;
+    }
+  }
+}
+
+@include breakpoint-desktop-lg {
+  .content {
+    &_container {
+
+    }
+
+    &_list {
+      margin-bottom: 40px;
+    }
+
+    &_item {
+      max-width: 210px;
+      flex-direction: column;
+
+      &__title {
+      }
+
+      &__text {
+      }
+    }
+
+    &_wrapper {
+      &__img {
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+@include breakpoint-laptop {
+  .content {
+    &_container {
+
+    }
+
+    &_list {
+      margin-bottom: 40px;
+    }
+
+    &_item {
+      max-width: 210px;
+      flex-direction: column;
+
+      &__title {
+      }
+
+      &__text {
+      }
+    }
+
+    &_wrapper {
+      align-items: start;
+      column-gap: 30px;
+      justify-content: space-between;
+
+      &__img {
+        max-width: 400px;
+      }
+
+      &__body {
+        max-width: 330px;
+      }
+
+      &__title {
+        font-size: 30px;
+      }
+
+      &__text {
+      }
+    }
+  }
+}
+
+@include breakpoint-tablet {
+  .content {
+    &_item {
+      &__title {
+        font-size: 16px;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+    }
+
+    &_wrapper {
+      flex-direction: column;
+
+      &__img {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      &__body {
+        max-width: 100%;
+      }
+
+      &__title {
+        font-size: 24px;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include breakpoint-mobile {
+  .content {
+    &_container {
+
+    }
+
+    &_list {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &_item {
+      flex-direction: row;
+      max-width: 100%;
+      padding-block: 32px;
+    }
+  }
+}

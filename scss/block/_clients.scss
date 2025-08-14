@@ -1,0 +1,59 @@
+@use "../base/mixins"  as *;
+
+.clients {
+  background: #EBEBEB;
+  padding-block: 60px;
+  overflow: hidden;
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  &_item {
+
+
+    &__link {
+      border: 1px solid #c4c4c4;
+      width: 255px;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}
+
+@include breakpoint-desktop-lg {
+  .clients {
+    &_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+    }
+
+    &_item {
+      width: 240px;
+      height: 127px;
+    }
+  }
+}
+
+@include breakpoint-mobile {
+  .clients {
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &_list {
+      width: 690px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      place-items: center;
+    }
+  }
+}

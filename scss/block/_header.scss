@@ -1,0 +1,282 @@
+@use '../base/mixins' as *;
+
+.header {
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 28px;
+
+    &.search {
+      .header_actions__input {
+        width: 228.5px;
+
+        > .header_actions__close {
+          opacity: 1;
+          transition: opacity ease .5s;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &_logo {
+    svg {
+      display: block;
+    }
+  }
+
+  &_burger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 6px 5px;
+    z-index: 3;
+
+    &-inner {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #4c5866;
+        left: 0;
+        transition: all ease-out 0.5s;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:nth-child(3) {
+          bottom: 0;
+        }
+      }
+    }
+
+    &.active {
+      > .header_burger-inner {
+        span {
+          transform-origin: center;
+
+          &:nth-child(2) {
+            left: -100%;
+          }
+
+          &:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+          }
+
+          &:nth-child(3) {
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+
+          }
+        }
+      }
+    }
+  }
+
+
+  &_nav {
+    transition: width ease 1s;
+
+    &__list {
+      transition: width ease 1s;
+      display: flex;
+      column-gap: 60px;
+    }
+
+    &__link {
+      font-weight: 400;
+      font-size: 20px;
+      color: #4c5866;
+      text-wrap: nowrap;
+    }
+  }
+
+
+  &_actions {
+    display: flex;
+    column-gap: 30px;
+    &__icon {
+      svg {
+        display: block;
+      }
+    }
+
+    &__search {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 7px;
+
+      svg {
+        cursor: pointer;
+      }
+
+    }
+
+
+    &__input {
+      position: relative;
+      transition: width ease .5s;
+      width: 0;
+      overflow: hidden;
+
+      input {
+        border-bottom: 1px solid #d1d1e5;
+        padding-right: 20px;
+        font-weight: 400;
+        font-size: 20px;
+        color: #4c5866;
+      }
+
+    }
+
+    &__close {
+      transition: opacity ease .5s;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #d1d1e5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+
+      svg {
+      }
+    }
+  }
+}
+
+
+@include breakpoint-desktop-lg {
+  .header {
+
+    &_nav {
+      &__list {
+        column-gap: 40px;
+      }
+    }
+  }
+}
+
+@include breakpoint-laptop {
+  .header {
+    position: relative;
+
+    &_container {
+      padding-block: 10px;
+    }
+
+    &::after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background: #ddd;
+      position: absolute;
+      top: 44px;
+      left: 0;
+    }
+
+    &_container {
+      flex-wrap: wrap;
+      row-gap: 30px;
+    }
+
+    &_logo {
+    }
+
+    &_nav {
+      position: relative;
+      order: 3;
+      width: 100%;
+
+      &__list {
+        justify-content: center;
+        justify-content: space-between;
+        column-gap: 20px;
+      }
+    }
+  }
+}
+
+
+@include breakpoint-mobile {
+  .header {
+
+    .container {
+      &.search {
+        .header_actions {
+          column-gap: 5px;
+        }
+      }
+    }
+
+    &_logo {
+      width: 100%;
+
+      svg {
+        margin: auto;
+      }
+    }
+
+
+    &_burger {
+      display: block;
+    }
+
+    &_nav {
+      position: fixed;
+      top: 44px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #ebebeb;
+      z-index: 2;
+      transition: all ease .5s;
+
+      &__list {
+        position: absolute;
+        top: 67px;
+        left: 15px;
+        height: 234px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &__link {
+        font-size: 18px;
+      }
+
+      &.active {
+        display: block;
+        left: 0;
+      }
+    }
+
+    &_actions {
+      column-gap: 5px;
+    }
+  }
+}
+
+
+
+
