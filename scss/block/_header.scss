@@ -14,7 +14,6 @@
 
         > .header_actions__close {
           opacity: 1;
-//          transition: opacity ease .5s;
           transition: opacity 0.5s ease, color .3s ease, background-color .5s ease;
           margin-right: 0;
         }
@@ -168,7 +167,7 @@
       display: inline-flex;
       align-items: center;
       column-gap: 7px;
-
+      color: #4C5866;
     }
 
     &__btn {

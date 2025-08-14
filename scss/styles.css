@@ -267,6 +267,7 @@ body {
   display: inline-flex;
   align-items: center;
   column-gap: 7px;
+  color: #4C5866;
 }
 .header_actions__btn {
   cursor: pointer;
