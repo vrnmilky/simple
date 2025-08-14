@@ -357,7 +357,6 @@ body {
     width: 100%;
   }
   .header_nav__list {
-    justify-content: center;
     justify-content: space-between;
     column-gap: 20px;
   }
